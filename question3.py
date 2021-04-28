@@ -37,7 +37,6 @@ class ManhattanTaxi:
         self.fuel = init_fuel
 
     def moveto(self, X, Y):
-
         distance_to_X = abs(X - self.X)
         distance_to_Y = abs(Y - self.Y)
         distance = distance_to_X + distance_to_Y
@@ -51,6 +50,7 @@ class ManhattanTaxi:
             return True
         else:
             return False
+
     def add_fuel(self, extra_fuel):
         self.fuel += extra_fuel
 
