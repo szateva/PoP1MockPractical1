@@ -1,4 +1,4 @@
-""" Question 3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Total: 12 marks
+""" Question 3  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Total: 12 marks
 Implement a class ManhattanTaxi that keeps track of the following features of a taxi vehicle:
  cons: an integer representing number of litres consumed per km of distance
  pos: a tuple (pair) of integers representing a position of the taxi on a map (assume
