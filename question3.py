@@ -7,7 +7,7 @@ between adjacent nodes is 1 km)
  fuel: a float number representing the current fuel level in litres.
 
 Implement the following methods:
- constructor: takes four integer parameters (in the specied sequence) initX,
+ constructor: takes four integer parameters (in the specified sequence) initX,
 initY, consumption and init_fuel, where (initX, initY) represents initial
 location of the taxi, consumption represents the consumption (litre/km) and
 init_fuel represents the initial fuel level
@@ -27,3 +27,34 @@ t789 = ManhattanTaxi(5, 5, 1, 30)
 assert t789.moveto(3,9) == True
 assert t789.pos[0] == 3 and t789.pos[1]==9
 assert abs(t789.fuel - 24) < 0.01"""
+
+class ManhattanTaxi:
+    def __init__(self, initX, initY, consumption, init_fuel ):
+        self.X = initX
+        self.Y = initY
+        self.pos = (self.X, self.Y)
+        self.cons = consumption
+        self.fuel = init_fuel
+
+    def moveto(self, X, Y):
+
+        distance_to_X = abs(X - self.X)
+        distance_to_Y = abs(Y - self.Y)
+        distance = distance_to_X + distance_to_Y
+        max_distance = self.fuel/self.cons
+
+        if distance <= max_distance:
+            self.X = X
+            self.Y = Y
+            self.pos = (X, Y)
+            self.fuel -= distance
+            return True
+        else:
+            return False
+    def add_fuel(self, extra_fuel):
+        self.fuel += extra_fuel
+
+t789 = ManhattanTaxi(5, 5, 1, 30)
+assert t789.moveto(3,9) == True
+assert t789.pos[0] == 3 and t789.pos[1] == 9
+assert abs(t789.fuel - 24) < 0.01
